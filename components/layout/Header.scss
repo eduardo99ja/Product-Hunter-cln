@@ -3,13 +3,13 @@ header {
   padding: 1rem 0;
 }
 .contenedor-header {
-    max-width: 1200px;
-    width: 95%;
-    margin: 0 auto;
-    @media (min-width:768px) {
-        display: flex;
-        justify-content: space-between;
-    }
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .logo {
   color: $naranja;
@@ -23,8 +23,8 @@ header {
 .botones {
   display: flex;
   align-items: center;
-  & p{
-      margin-right: 2rem;
+  & p {
+    margin-right: 2rem;
   }
 }
 .boton {
@@ -41,5 +41,49 @@ header {
 
   &:hover {
     cursor: pointer;
+  }
+}
+
+/**Buscar  */
+
+.buscar {
+  position: relative;
+  input {
+    border: 1px solid $gris3;
+    padding: 1rem;
+    min-width: 300px;
+  }
+  button {
+    height: 3rem;
+    width: 3rem;
+    display: block;
+    background-size: 4rem;
+    background-image: url('/static/img/buscar.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 1rem;
+    top: 1px;
+    background-color: white;
+    border: none;
+    text-indent: -9999px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+/**Navegacion */
+
+.header__nav {
+  padding-left: 2rem;
+  a {
+    font-size: 1.8rem;
+    margin-left: 2rem;
+    color: $gris2;
+    font-family: 'PT Sans', sans-serif;
+    &:last-of-type {
+      margin-right: 0;
+    }
   }
 }

@@ -1,7 +1,7 @@
 const Buscar = () => {
   return (
-    <form>
-      <input type='text' />
+    <form className='buscar'>
+      <input type='text' placeholder='Buscar productos' />
       <button type='submit'>Buscar</button>
     </form>
   )

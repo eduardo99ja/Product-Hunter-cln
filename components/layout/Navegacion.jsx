@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const Navegacion = () => {
   return (
-    <nav>
+    <nav className='header__nav'>
       <Link href='/'>Inicio</Link>
       <Link href='/'>Populares</Link>
       <Link href='/'>Nuevo producto</Link>
