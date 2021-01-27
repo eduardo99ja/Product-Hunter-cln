@@ -1,0 +1,45 @@
+header {
+  border-bottom: 2px solid $gris3;
+  padding: 1rem 0;
+}
+.contenedor-header {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+    @media (min-width:768px) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.logo {
+  color: $naranja;
+  font-size: 4rem;
+  line-height: 0;
+  font-weight: 700;
+  font-family: 'Roboto Slab', serif;
+  margin-right: 2rem;
+}
+/**Botones */
+.botones {
+  display: flex;
+  align-items: center;
+  & p{
+      margin-right: 2rem;
+  }
+}
+.boton {
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1px solid #d1d1d1;
+  padding: 0.8rem 2rem;
+  margin: 2rem auto;
+  text-align: center;
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
