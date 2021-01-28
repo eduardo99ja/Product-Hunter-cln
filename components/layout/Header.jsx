@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Boton from '../ui/Boton'
 
 const Header = () => {
-  const user = true
+  const user = false
   return (
     <header>
       <div className='contenedor-header'>
