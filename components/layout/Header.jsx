@@ -24,11 +24,15 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Link href='/'>
-                <Boton text='Login' bg='true' />
+              <Link href='/login'>
+                <a>
+                  <Boton text='Login' bg='true' />
+                </a>
               </Link>
-              <Link href='/'>
-                <Boton text='Crear Cuenta' />
+              <Link href='/crear-cuenta'>
+                <a>
+                  <Boton text='Crear Cuenta'>as</Boton>
+                </a>
               </Link>
             </>
           )}

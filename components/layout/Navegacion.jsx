@@ -4,8 +4,8 @@ const Navegacion = () => {
   return (
     <nav className='header__nav'>
       <Link href='/'>Inicio</Link>
-      <Link href='/'>Populares</Link>
-      <Link href='/'>Nuevo producto</Link>
+      <Link href='/populares'>Populares</Link>
+      <Link href='/nuevo-producto'>Nuevo producto</Link>
     </nav>
   )
 }

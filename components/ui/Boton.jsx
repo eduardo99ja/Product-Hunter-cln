@@ -4,9 +4,9 @@ const Boton = ({ text, bg }) => {
     color: bg ? 'white' : '#000',
   }
   return (
-    <a className='boton' style={style}>
+    <div className='boton' style={style}>
       {text}
-    </a>
+    </div>
   )
 }
 
