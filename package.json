@@ -8,6 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "firebase": "^8.2.4",
+    "firebase-admin": "^9.4.2",
     "next": "10.0.5",
     "node-sass": "^5.0.0",
     "react": "17.0.1",
