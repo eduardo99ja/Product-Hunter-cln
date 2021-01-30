@@ -2,9 +2,11 @@ import Buscar from '../ui/Buscar'
 import Navegacion from './Navegacion'
 import Link from 'next/link'
 import Boton from '../ui/Boton'
+import { useContext } from 'react'
+import { FirebaseContext } from '../../firebase'
 
 const Header = () => {
-  const user = false
+  const { usuario: user, firebase } = useContext(FirebaseContext)
   return (
     <header>
       <div className='contenedor-header'>
@@ -19,8 +21,12 @@ const Header = () => {
         <div className='botones'>
           {user ? (
             <>
-              <p>Hola: Apodaca</p>
-              <Boton text='Cerrar sesion' bg='true' />
+              <p>Hola: {user.displayName}</p>
+              <Boton
+                text='Cerrar sesion'
+                bg='true'
+                onClick={() => firebase.cerrarSesion()}
+              />
             </>
           ) : (
             <>

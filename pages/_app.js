@@ -1,12 +1,16 @@
 import '../scss/global.scss'
 import App from 'next/app'
 import firebase, { FirebaseContext } from '../firebase'
+import useAutenticacion from '../hooks/useAutenticacion'
 
 function MyApp({ Component, pageProps }) {
+  const usuario = useAutenticacion()
+
   return (
     <FirebaseContext.Provider
       value={{
         firebase,
+        usuario,
       }}
     >
       <Component {...pageProps} />
