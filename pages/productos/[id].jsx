@@ -3,6 +3,8 @@ import { useRouter } from 'next/router'
 import { FirebaseContext } from '../../firebase'
 import Error404 from '../../components/layout/Error404'
 import Layout from '../../components/layout/Layout'
+import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+import { es } from 'date-fns/locale'
 
 const Producto = () => {
   //state del componente
@@ -38,12 +40,56 @@ const Producto = () => {
       obtenerProducto()
     }
   }, [id])
-
+  if (Object.keys(producto).length === 0 && !error) return 'Cargando...'
+  const {
+    comentarios,
+    creado,
+    descripcion,
+    empresa,
+    nombre,
+    url,
+    urlimagen,
+    votos,
+    creador,
+    haVotado,
+  } = producto
   return (
     <Layout>
       <>
-      {error && <Error404 />}
-      <h1>desde {id}</h1>
+        {error && <Error404 />}
+        <div className='contenedor'>
+          <h1 className='nombre-producto'>{nombre}</h1>
+          <div className='contenedor-producto'>
+            <div>
+              <p>
+                Publicado hace:{' '}
+                {formatDistanceToNow(new Date(creado), { locale: es })}{' '}
+              </p>
+
+              <img src={urlimagen} />
+              <p>{descripcion}</p>
+              <h2>Agrega tu comentario</h2>
+              <form>
+                <div className='campo'>
+                  <input type='text' name='mensaje' />
+                </div>
+                <input
+                  className='inputSubmit'
+                  type='submit'
+                  value='Agregar Comentario'
+                />
+              </form>
+              <h2 className='comentarios'>Comentarios</h2>
+              {comentarios.map(comentario => (
+                <li>
+                  <p>{comentario.nombre}</p>
+                  <p>Escrito por: {comentario.usuario}</p>
+                </li>
+              ))}
+            </div>
+            <aside>2</aside>
+          </div>
+        </div>
       </>
     </Layout>
   )

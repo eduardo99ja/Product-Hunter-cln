@@ -1,0 +1,24 @@
+.nombre-producto {
+  text-align: center;
+  margin-top: 5rem;
+}
+.contenedor-producto {
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 2rem;
+  }
+}
+
+.creador-producto {
+  padding: 0.5rem 2rem;
+  background-color: #da552f;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+}
+.comentarios {
+  margin: 2rem 0;
+}
