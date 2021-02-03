@@ -5,6 +5,7 @@ import Error404 from '../../components/layout/Error404'
 import Layout from '../../components/layout/Layout'
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import { es } from 'date-fns/locale'
+import Boton from '../../components/ui/Boton'
 
 const Producto = () => {
   //state del componente
@@ -65,6 +66,9 @@ const Producto = () => {
                 Publicado hace:{' '}
                 {formatDistanceToNow(new Date(creado), { locale: es })}{' '}
               </p>
+              <p>
+                Por {creador.nombre} de {empresa}
+              </p>
 
               <img src={urlimagen} />
               <p>{descripcion}</p>
@@ -87,7 +91,12 @@ const Producto = () => {
                 </li>
               ))}
             </div>
-            <aside>2</aside>
+            <aside>
+              <Boton text='Visitar url' bg='true' target='true' href={url} />
+
+              <p>{votos} votos</p>
+              <Boton text='votar' />
+            </aside>
           </div>
         </div>
       </>
