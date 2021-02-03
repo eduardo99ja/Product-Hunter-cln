@@ -60,6 +60,7 @@ export default function NuevoProducto() {
         id: usuario.uid,
         nombre: usuario.displayName,
       },
+      haVotado: [],
     }
     //insertarlo en la bd
     firebase.db.collection('productos').add(producto)

@@ -40,7 +40,7 @@ const Producto = () => {
       }
       obtenerProducto()
     }
-  }, [id])
+  }, [id, producto])
   if (Object.keys(producto).length === 0 && !error) return 'Cargando...'
   const {
     comentarios,
@@ -54,6 +54,36 @@ const Producto = () => {
     creador,
     haVotado,
   } = producto
+
+  //administrar y validar los votos
+  const votarProducto = () => {
+    if (!usuario) {
+      return router.push('/login')
+    }
+
+    // obtener y sumar un nuevo voto
+    const nuevoTotal = votos + 1
+
+    // Verificar si el usuario actual ha votado
+    if (haVotado.includes(usuario.uid)) return
+
+    // guardar el ID del usuario que ha votado
+    const nuevoHaVotado = [...haVotado, usuario.uid]
+
+    //  Actualizar en la BD
+    firebase.db.collection('productos').doc(id).update({
+      votos: nuevoTotal,
+      haVotado: nuevoHaVotado,
+    })
+
+    // Actualizar el state
+    guardarProducto({
+      ...producto,
+      votos: nuevoTotal,
+    })
+
+    guardarConsultarDB(true) // hay un voto, por lo tanto consultar a la BD
+  }
   return (
     <Layout>
       <>
@@ -101,7 +131,7 @@ const Producto = () => {
               </a>
 
               <p>{votos} votos</p>
-              {usuario && <Boton text='votar' />}
+              {usuario && <Boton text='votar' onClick={votarProducto} />}
             </aside>
           </div>
         </div>
