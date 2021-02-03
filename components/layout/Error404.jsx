@@ -3,7 +3,7 @@ const Error404 = () => {
     marginTop: '5rem',
     textAlign: 'center',
   }
-  return <h1 style={style}>Producto no existente</h1>
+  return <h1 style={style}>No se puede mostrar</h1>
 }
 
 export default Error404

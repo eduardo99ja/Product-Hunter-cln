@@ -72,17 +72,21 @@ const Producto = () => {
 
               <img src={urlimagen} />
               <p>{descripcion}</p>
-              <h2>Agrega tu comentario</h2>
-              <form>
-                <div className='campo'>
-                  <input type='text' name='mensaje' />
-                </div>
-                <input
-                  className='inputSubmit'
-                  type='submit'
-                  value='Agregar Comentario'
-                />
-              </form>
+              {usuario && (
+                <>
+                  <h2>Agrega tu comentario</h2>
+                  <form>
+                    <div className='campo'>
+                      <input type='text' name='mensaje' />
+                    </div>
+                    <input
+                      className='inputSubmit'
+                      type='submit'
+                      value='Agregar Comentario'
+                    />
+                  </form>
+                </>
+              )}
               <h2 className='comentarios'>Comentarios</h2>
               {comentarios.map(comentario => (
                 <li>
@@ -92,10 +96,12 @@ const Producto = () => {
               ))}
             </div>
             <aside>
-              <Boton text='Visitar url' bg='true' target='true' href={url} />
+              <a href={url} target='_blank'>
+                <Boton text='Visitar url' bg='true' />
+              </a>
 
               <p>{votos} votos</p>
-              <Boton text='votar' />
+              {usuario && <Boton text='votar' />}
             </aside>
           </div>
         </div>
