@@ -1,6 +1,5 @@
 import '../scss/global.scss'
-import App from 'next/app'
-import firebase, { FirebaseContext } from '../firebase'
+import firebase,{ FirebaseContext }   from '../firebase'
 import useAutenticacion from '../hooks/useAutenticacion'
 
 function MyApp({ Component, pageProps }) {
