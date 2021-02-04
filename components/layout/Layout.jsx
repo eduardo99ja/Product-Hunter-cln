@@ -5,7 +5,6 @@ const Layout = props => {
   return (
     <>
       <Head>
-        <html lang='es' />
         <title>Produc hunt- Firebase</title>
         <link
           rel='stylesheet'

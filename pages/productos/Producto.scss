@@ -22,3 +22,19 @@
 .comentarios {
   margin: 2rem 0;
 }
+.comentario {
+  border: 1px solid #e1e1e1;
+  padding: 2rem;
+}
+.comentario-usuario {
+  font-weight: bold;
+}
+.creador-producto {
+  padding: 0.5rem 2rem;
+  background-color: #da552f;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+}
